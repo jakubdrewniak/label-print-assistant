@@ -1,6 +1,12 @@
 <div class="board-wrapper">
-    <div class="quarter"></div>
-    <div class="quarter"></div>
+    <div class="quarter">
+        <input type="file" (change)="fileChanged($event)" />
+    </div>
+
+    <div class="quarter">
+        <button (click)="logFile()">Log file</button>
+    </div>
+
     <div class="quarter"></div>
     <div class="quarter"></div>
 </div>

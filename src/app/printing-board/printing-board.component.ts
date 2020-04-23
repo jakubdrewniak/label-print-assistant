@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrintingBoardComponent implements OnInit {
 
+  private file: File;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  fileChanged(e) {
+    this.file = e.target.files[0];
+  }
+
+  logFile() {
+    console.log(this.file);
+  }
 }
