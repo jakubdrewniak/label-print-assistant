@@ -1,10 +1,14 @@
 <div class="board-wrapper">
     <div class="quarter">
         <input type="file" (change)="fileChanged($event)" />
+        <div class="pdf" *ngIf="loadedFile" >
+            <ng2-pdfjs-viewer [pdfSrc]="loadedFile"></ng2-pdfjs-viewer>
+        </div>
     </div>
 
     <div class="quarter">
         <button (click)="logFile()">Log file</button>
+        <button (click)="removeFile()">Remove file</button>
     </div>
 
     <div class="quarter"></div>

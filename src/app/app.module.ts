@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrintingBoardComponent } from './printing-board/printing-board.component';
+import { PdfFileReader } from './printing-board/auxiliary/fileReader';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,12 @@ import { PrintingBoardComponent } from './printing-board/printing-board.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PdfJsViewerModule
   ],
-  providers: [],
+  providers: [
+    PdfFileReader
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
