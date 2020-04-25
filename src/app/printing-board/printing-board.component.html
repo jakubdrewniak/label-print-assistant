@@ -1,8 +1,13 @@
 <div class="board-wrapper">
     <div class="quarter">
-        <input type="file" (change)="fileChanged($event)" />
+        <input *ngIf="!loadedFile" type="file" (change)="fileChanged($event)" />
         <div class="pdf" *ngIf="loadedFile" >
-            <ng2-pdfjs-viewer [pdfSrc]="loadedFile"></ng2-pdfjs-viewer>
+            <ng2-pdfjs-viewer 
+            #viewer
+            [pdfSrc]="loadedFile"
+            viewerId="id1"
+            (onDocumentLoad)="pdfLoaded($event)"
+            ></ng2-pdfjs-viewer>
         </div>
     </div>
 

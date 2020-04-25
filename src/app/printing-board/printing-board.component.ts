@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PdfFileReader } from './auxiliary/fileReader';
 
 @Component({
@@ -9,6 +9,7 @@ import { PdfFileReader } from './auxiliary/fileReader';
 export class PrintingBoardComponent implements OnInit {
 
   loadedFile: any;
+  @ViewChild('viewer') pdfAppComponent;
 
   constructor(
     private pdfFileReader: PdfFileReader
@@ -25,6 +26,16 @@ export class PrintingBoardComponent implements OnInit {
       const uint = new Uint8Array(result);
       this.loadedFile = uint;
     };
+  }
+
+  pdfLoaded($event) {
+    // TO DO: QUERY ELEMENTS BY CLASS NAMES, NOT INDEX IN CHILD NODES ARRAY
+
+    // TO DO: WRITE SCRIPT TO CHANGE C:\Users\kuba\code\label-print-assistant\node_modules\ng2-pdfjs-viewer\pdfjs\web\viewer.js  var PRINT_RESOLUTION = 12000;
+    this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
+      .style.margin = 0;
+    this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
+      .style.border = 'none';
   }
 
   logFile() {
