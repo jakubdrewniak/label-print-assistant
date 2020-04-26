@@ -13,7 +13,8 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run build --prod
+        npm run print-fix
+        npm run build-no-fix --prod
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
