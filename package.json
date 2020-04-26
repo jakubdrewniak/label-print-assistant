@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "./print-resolution-fix.sh && ng serve",
     "build": "./print-resolution-fix.sh && ng build",
-    "build-no-fix": "ng build",
+    "build-no-fix": "ng build --output-path=./dist",
     "print-fix": "./print-resolution-fix.sh",
     "test": "ng test",
     "lint": "ng lint",
