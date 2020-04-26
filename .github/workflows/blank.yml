@@ -13,6 +13,7 @@ jobs:
     - name: Build
       run: |
         npm install
+        npm run print-fix
         npm run build-no-fix
 
     - name: Deploy
