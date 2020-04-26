@@ -9070,7 +9070,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var DELAY_BEFORE_RESETTING_SWITCH_IN_PROGRESS = 1500;
+var DELAY_BEFORE_RESETTING_SWITCH_IN_PROGRESS = 12000;
 var DELAY_BEFORE_HIDING_CONTROLS = 3000;
 var ACTIVE_SELECTOR = 'pdfPresentationMode';
 var CONTROLS_SELECTOR = 'pdfPresentationModeControls';
@@ -15582,7 +15582,7 @@ var overlayManager = null;
 
 function renderPage(activeServiceOnEntry, pdfDocument, pageNumber, size) {
   var scratchCanvas = activeService.scratchCanvas;
-  var PRINT_RESOLUTION = 150;
+  var PRINT_RESOLUTION = 1200;
   var PRINT_UNITS = PRINT_RESOLUTION / 72.0;
   scratchCanvas.width = Math.floor(size.width * PRINT_UNITS);
   scratchCanvas.height = Math.floor(size.height * PRINT_UNITS);
