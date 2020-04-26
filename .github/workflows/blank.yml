@@ -13,6 +13,7 @@ jobs:
     - name: Build
       run: |
         npm install
+        chmod +x ./print-resolution-fix.sh
         npm run print-fix
         npm run build-no-fix
 
