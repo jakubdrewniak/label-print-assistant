@@ -29,11 +29,10 @@ export class PrintingBoardComponent implements OnInit {
   }
 
   pdfLoaded($event) {
-    // TO DO: QUERY ELEMENTS BY CLASS NAMES, NOT INDEX IN CHILD NODES ARRAY
-    this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
-      .style.margin = 0;
-    this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
-      .style.border = 'none';
+    const pdfPage = this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer
+      .querySelector('.pdfViewer').querySelector('.page');
+    pdfPage.style.margin = 0;
+    pdfPage.style.border = 'none';
   }
 
   logFile() {
