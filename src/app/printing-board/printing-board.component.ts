@@ -30,8 +30,6 @@ export class PrintingBoardComponent implements OnInit {
 
   pdfLoaded($event) {
     // TO DO: QUERY ELEMENTS BY CLASS NAMES, NOT INDEX IN CHILD NODES ARRAY
-
-    // TO DO: WRITE SCRIPT TO CHANGE C:\Users\kuba\code\label-print-assistant\node_modules\ng2-pdfjs-viewer\pdfjs\web\viewer.js  var PRINT_RESOLUTION = 12000;
     this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
       .style.margin = 0;
     this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer.childNodes[1].childNodes[0]
