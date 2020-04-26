@@ -1,0 +1,8 @@
+<label *ngIf="!loadedFile" class="add-file__wrapper">
+    <input  type="file" (change)="fileChanged($event)" />
+</label>
+
+<div class="viewer-wrapper" *ngIf="loadedFile">
+    <ng2-pdfjs-viewer #viewer [pdfSrc]="loadedFile" viewerId="id1" (onDocumentLoad)="pdfLoaded($event)" zoom="98">
+    </ng2-pdfjs-viewer>
+</div>

@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { PdfFileReader } from './auxiliary/fileReader';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-printing-board',
@@ -8,38 +7,10 @@ import { PdfFileReader } from './auxiliary/fileReader';
 })
 export class PrintingBoardComponent implements OnInit {
 
-  loadedFile: any;
-  @ViewChild('viewer') pdfAppComponent;
+  availableSlots = ['id1', 'id2', 'id3', 'id4']
 
-  constructor(
-    private pdfFileReader: PdfFileReader
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  fileChanged(e) {
-    const file = e.target.files[0];
-    this.pdfFileReader.pdfFileReader.readAsArrayBuffer(file);
-    this.pdfFileReader.pdfFileReader.onloadend = (e) => {
-      const result = this.pdfFileReader.pdfFileReader.result as ArrayBuffer;
-      const uint = new Uint8Array(result);
-      this.loadedFile = uint;
-    };
-  }
-
-  pdfLoaded($event) {
-    const pdfPage = this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer
-      .querySelector('.pdfViewer').querySelector('.page');
-    pdfPage.style.margin = 0;
-    pdfPage.style.border = 'none';
-  }
-
-  logFile() {
-    console.log(this.loadedFile);
-  }
-
-  removeFile() {
-    this.loadedFile = null;
   }
 }

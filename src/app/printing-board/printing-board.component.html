@@ -1,22 +1,5 @@
 <div class="board-wrapper">
-    <div class="quarter">
-        <input *ngIf="!loadedFile" type="file" (change)="fileChanged($event)" />
-        <div class="pdf" *ngIf="loadedFile" >
-            <ng2-pdfjs-viewer 
-            #viewer
-            [pdfSrc]="loadedFile"
-            viewerId="id1"
-            (onDocumentLoad)="pdfLoaded($event)"
-            zoom="98"
-            ></ng2-pdfjs-viewer>
-        </div>
+    <div *ngFor="let slotId of availableSlots" class="quarter">
+        <app-pdf-slot [pdfId]="slotId"></app-pdf-slot>
     </div>
-
-    <div class="quarter">
-        <button (click)="logFile()">Log file</button>
-        <button (click)="removeFile()">Remove file</button>
-    </div>
-
-    <div class="quarter"></div>
-    <div class="quarter"></div>
 </div>
