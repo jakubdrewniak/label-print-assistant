@@ -5,17 +5,16 @@ import { FileSlot, FileStatus } from '../models/file-slot';
 @Component({
   selector: 'app-pdf-slot',
   templateUrl: './pdf-slot.component.html',
-  styleUrls: ['./pdf-slot.component.scss']
+  styleUrls: ['./pdf-slot.component.scss'],
 })
 export class PdfSlotComponent implements OnInit {
   loadedFile: any;
   @ViewChild('viewer') pdfAppComponent;
   @Input() slot: FileSlot;
 
-  constructor(private pdfFileReader: PdfFileReader) { }
+  constructor(private pdfFileReader: PdfFileReader) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   fileChanged(e) {
     this.slot.status = FileStatus.loading;
@@ -31,8 +30,14 @@ export class PdfSlotComponent implements OnInit {
   pdfLoaded($event) {
     this.slot.status = FileStatus.ready;
     const pdfPage = this.pdfAppComponent.PDFViewerApplication.appConfig.mainContainer
-      .querySelector('.pdfViewer').querySelector('.page');
+      .querySelector('.pdfViewer')
+      .querySelector('.page');
     pdfPage.style.margin = 0;
     pdfPage.style.border = 'none';
+  }
+
+  removeFile() {
+    this.loadedFile = null;
+    this.slot.status = FileStatus.empty;
   }
 }
