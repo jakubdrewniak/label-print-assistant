@@ -10,7 +10,8 @@ your files are NOT sent anywhere- it's easy to check in network tab in devtools,
 backlog:
 1. print button // done
 2. prevent focus on loaded view // done
-3.1. uploading file by clicking quarter or dragging file on it
+3.1.a uploading file by clicking quarter or dragging file on it // done
+3.2.b prevent dragging file outside of quarters // done
 3.2. make quarters draggable
 4. add remove one/ remove all pdf
 5. trim url 
