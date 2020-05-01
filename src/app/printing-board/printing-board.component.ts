@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-printing-board',
@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrintingBoardComponent implements OnInit {
 
-  availableSlots = ['id1', 'id2', 'id3', 'id4']
+  availableSlots = ['id1', 'id2', 'id3', 'id4'];
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  printBoard() {
+    window.print();
   }
 }
