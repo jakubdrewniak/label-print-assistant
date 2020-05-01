@@ -1,10 +1,24 @@
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-wrapper button {
+  height: 32px;
+  width: 64px;
+}
+
+.button-wrapper,
+.board-wrapper {
+  width: calc(80vh * 0.71);
+  margin: auto;
+}
+
 .board-wrapper {
   height: 80vh;
-  width: calc(80vh * 0.71);
   padding: 32px calc(32px * 0.71);
 
   border: 1px solid #000;
-  margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
@@ -22,5 +36,6 @@
     height: 1123px;
     width: 794px;
     padding: 0;
+    border: none;
   }
 }

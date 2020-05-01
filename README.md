@@ -10,8 +10,8 @@ click white background to loose focus and the ctrl+p. turn off margins in browse
 your files are NOT sent anywhere- it's easy to check in network tab in devtools, plus- app code is public.
 
 backlog:
-1. print button
-2. prevent focus on loaded view
+1. print button // done
+2. prevent focus on loaded view // done
 3. make quarters draggable
 4. add remove one/ remove all pdf
 5. trim url 

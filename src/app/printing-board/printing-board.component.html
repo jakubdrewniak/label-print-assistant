@@ -1,6 +1,9 @@
-<div class="board-wrapper">
-    <div *ngFor="let slotId of availableSlots" class="quarter">
-        <app-pdf-slot [pdfId]="slotId"></app-pdf-slot>
-    </div>
+<div class="button-wrapper">
+  <button (click)="printBoard()">Print</button>
 </div>
-<button (click)="printBoard()">Print</button>
+
+<div class="board-wrapper">
+  <div *ngFor="let slotId of availableSlots" class="quarter">
+    <app-pdf-slot [pdfId]="slotId"></app-pdf-slot>
+  </div>
+</div>
