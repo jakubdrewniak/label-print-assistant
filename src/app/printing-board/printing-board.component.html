@@ -1,9 +1,9 @@
 <div class="button-wrapper">
-  <button (click)="printBoard()">Print</button>
+  <button (click)="printBoard()" [disabled]="fileIsLoading()">Print</button>
 </div>
 
 <div class="board-wrapper">
-  <div *ngFor="let slotId of availableSlots" class="quarter">
-    <app-pdf-slot [pdfId]="slotId"></app-pdf-slot>
+  <div *ngFor="let slot of availableSlots" class="quarter">
+    <app-pdf-slot [slot]="slot"></app-pdf-slot>
   </div>
 </div>

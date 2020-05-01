@@ -6,6 +6,9 @@
 .button-wrapper button {
   height: 32px;
   width: 64px;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .button-wrapper,

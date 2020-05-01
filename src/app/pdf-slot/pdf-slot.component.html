@@ -3,6 +3,6 @@
 </label>
 
 <div class="viewer-wrapper" *ngIf="loadedFile">
-    <ng2-pdfjs-viewer #viewer [pdfSrc]="loadedFile" viewerId="id1" (onDocumentLoad)="pdfLoaded($event)" zoom="98">
+    <ng2-pdfjs-viewer #viewer [pdfSrc]="loadedFile" [viewerId]="slot.id" (onDocumentLoad)="pdfLoaded($event)" zoom="98">
     </ng2-pdfjs-viewer>
 </div>

@@ -1,21 +1,30 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FileSlot, FileStatus } from '../models/file-slot';
 
 @Component({
   selector: 'app-printing-board',
   templateUrl: './printing-board.component.html',
-  styleUrls: ['./printing-board.component.scss']
+  styleUrls: ['./printing-board.component.scss'],
 })
 export class PrintingBoardComponent implements OnInit {
+  availableSlots: FileSlot[];
 
-  availableSlots = ['id1', 'id2', 'id3', 'id4'];
-
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.availableSlots = [
+      { id: 'id1', status: FileStatus.empty },
+      { id: 'id2', status: FileStatus.empty },
+      { id: 'id3', status: FileStatus.empty },
+      { id: 'id4', status: FileStatus.empty },
+    ];
   }
 
-  printBoard() {
+  printBoard(): void {
     window.print();
+  }
+
+  fileIsLoading(): boolean {
+    return !!this.availableSlots.find(s => s.status === FileStatus.loading);
   }
 }
