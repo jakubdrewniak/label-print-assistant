@@ -1,31 +1,18 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'label-print-assistant';
 
-  ngOnInit() {
-    window.addEventListener(
-      'dragover',
-      (e) => {
-        if (e && (e.target as any).tagName !== 'INPUT') {
-          e.preventDefault();
-        }
-      },
-      false
-    );
-    window.addEventListener(
-      'drop',
-      (e) => {
-        if (e && (e.target as any).tagName !== 'INPUT') {
-          e.preventDefault();
-        }
-      },
-      false
-    );
+  @HostListener('window:dragover', ['$event'])
+  @HostListener('window:drop', ['$event'])
+  onFileDragOrDrop(e) {
+    if (e && (e.target as any).tagName !== 'INPUT') {
+      e.preventDefault();
+    }
   }
 }
